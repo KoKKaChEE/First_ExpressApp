@@ -1,17 +1,10 @@
 const db = require("../db/index")
-const cache = require("../config/cache")
+// const cache = require("../config/cache")
 
 const getUserDetails = async (req, res) => {
   try {
-    let userDetails = await cache.getCache(req.params.username)
-    if (userDetails) {
-      res.json(userDetails)
-    }
-    else {
       userDetails = await db.userDetailsCollection.findOne({ username: req.params.username });
-      await cache.setCache(userDetails.username,userDetails.password)
       res.json(userDetails)
-    }
   }
   catch (ex) {
     // res.status(500)
