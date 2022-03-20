@@ -1,21 +1,21 @@
-const { createClient } = require('redis');
+// const { createClient } = require('redis');
 
-(async () => {
-  const client = createClient();
+// (async () => {
+//   const client = createClient();
 
-  client.on('error', (err) => console.log('Redis Client Error', err));
+//   client.on('error', (err) => console.log('Redis Client Error', err));
 
-  await client.connect();
-})();
+//   await client.connect();
+// })();
 
-const setCache = async (key, value) => {
-  await client.set(key, value);
-}
+// const setCache = async (key, value) => {
+//   await client.set(key, value);
+// }
 
-module.exports.setCache = setCache;
+// module.exports.setCache = setCache;
 
-const getCache = async (key) => {
-  return await client.get(key);
-}
+// const getCache = async (key) => {
+//   return await client.get(key);
+// }
 
-module.exports.getCache = getCache;
+// module.exports.getCache = getCache;
