@@ -18,8 +18,6 @@ const userroutes = () => {
 
 const routes = () => {
     const router = express.Router();
-    router.route('/hello')
-        .post(validate.exampleValidation(), ctrl.sendResponseforPost)
     return router;
 }
 
